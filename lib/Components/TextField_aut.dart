@@ -16,14 +16,14 @@ class TextfieldAut extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(25.0),
       child: TextField(
-        cursorColor: Color.fromARGB(255, 222, 100, 0),
-        style: TextStyle(color: Color.fromARGB(255, 154, 69, 0)),
+        cursorColor: Color.fromARGB(255, 99, 39, 47),
+        style: TextStyle(color: Color.fromARGB(255, 83, 32, 39)),
         controller: controller,
         obscureText: obscureText,
         decoration: InputDecoration(
           hintText: hintText,
           hintStyle: TextStyle(
-            color: Colors.orange[800]
+            color: Color.fromARGB(255, 99, 39, 47)
           ),
           enabledBorder: const OutlineInputBorder(
             borderSide: BorderSide(
@@ -35,7 +35,7 @@ class TextfieldAut extends StatelessWidget {
               color: Colors.white
             )
           ),
-          fillColor: Color.fromARGB(255, 255, 205, 130),
+          fillColor: Color.fromARGB(255, 156, 121, 125),
           filled: true,
         ),
       ),

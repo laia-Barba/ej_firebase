@@ -5,6 +5,11 @@ import 'package:flutter/material.dart';
 class PaginaRegistre extends StatelessWidget {
   const PaginaRegistre({super.key});
 
+
+  void ferRegistre(){
+
+  }
+
   @override
   Widget build(BuildContext context) {
     final TextEditingController tecEmail = TextEditingController();
@@ -12,7 +17,7 @@ class PaginaRegistre extends StatelessWidget {
     final TextEditingController tecConfPass = TextEditingController();
 
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 250, 183, 159),
+      backgroundColor: const Color.fromARGB(255, 99, 39, 47),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Center(
@@ -98,14 +103,14 @@ class PaginaRegistre extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
-                      Text("Ja ets membre?"),
+                      Text("Ja ets membre?", style: TextStyle(fontWeight: FontWeight.bold),),
                       SizedBox(width: 5,),
                       GestureDetector(
                         child: Text(
                           "Fes login",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 40, 71, 97)
+                            color: Color.fromARGB(255, 156, 121, 125)
                           ),
                         ),
                       )
@@ -116,7 +121,15 @@ class PaginaRegistre extends StatelessWidget {
                 SizedBox(height: 10,),
 
                 //Boto registre
-                BotoAuth(),
+                BotoAuth(
+                  text: "Registre", 
+                  onTap: ferRegistre
+                ),
+                //Boto registre
+                BotoAuth(
+                  text: "Logout", 
+                  onTap: (){}
+                ),
               ],
             ),
           ),
