@@ -16,3 +16,30 @@ class MainApp extends StatelessWidget {
     );
   }
 }
+
+
+
+/* 
+  1) Tenir node.js instalat
+    - En acabar es pot comprobar 
+      node -v
+      npm -v
+      
+  2) Anar a la web de firebase i clicar a 'Go to console'
+    - Amb la compta iniciada de google
+
+  3) Des de a consola de FireBase creem un projecte de firebase
+
+  4) Anem al menu compilacion i habilitem:
+    - Autetication i firestore Database
+
+  5) En una cmd, per exemle la del VS code , fem
+    - Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+    - npm install -g firebase-tools (instala firebase al dispositiu)
+      - firebase login
+  
+  6) flutter pub global activate flutterfire_cli
+  7) C:\Users\l.barba\AppData\Local\Pub\Cache\bin\flutterfire configure
+
+    
+*/
