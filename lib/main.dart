@@ -1,7 +1,12 @@
 import 'package:ej_firebase/Pagines/Pagina_registre.dart';
+import 'package:ej_firebase/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+void main() async{
+
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
   runApp(const MainApp());
 }
 
@@ -40,6 +45,10 @@ class MainApp extends StatelessWidget {
   
   6) flutter pub global activate flutterfire_cli
   7) C:\Users\l.barba\AppData\Local\Pub\Cache\bin\flutterfire configure
+
+  8) Instalar dependencies (treu el errors de "firebase_options.dart")
+   - flutter pub add firebase_core 
+   - flutter pub add firebase_auth
 
     
 */
