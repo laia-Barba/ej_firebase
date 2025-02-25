@@ -1,3 +1,6 @@
+import 'package:ej_firebase/Auth/portal_auth.dart';
+import 'package:ej_firebase/Pagines/Pagina_inici.dart';
+import 'package:ej_firebase/Pagines/Pagina_login.dart';
 import 'package:ej_firebase/Pagines/Pagina_registre.dart';
 import 'package:ej_firebase/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -17,7 +20,8 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PaginaRegistre(),
+      //home: PaginaRegistre(),
+      home: PortalAuth()
     );
   }
 }
@@ -49,6 +53,7 @@ class MainApp extends StatelessWidget {
   8) Instalar dependencies (treu el errors de "firebase_options.dart")
    - flutter pub add firebase_core 
    - flutter pub add firebase_auth
+   - flutter pub add cloud_firestore
 
     
 */
