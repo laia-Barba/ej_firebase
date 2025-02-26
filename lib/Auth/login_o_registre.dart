@@ -25,7 +25,7 @@ class _LoginORegistreState extends State<LoginORegistre> {
     if (mostraPaginaLogin){
       return PaginaLogin(ferClick: intercanviarPaginesLoginRegistre,);
     }else{
-      return PaginaRegistre(ferClick: intercanviarPaginesLoginRegistre);
+      return PaginaRegistre(ferClick: intercanviarPaginesLoginRegistre,);
     }
     
   }

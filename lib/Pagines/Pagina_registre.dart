@@ -88,15 +88,12 @@ class PaginaRegistre extends StatelessWidget {
                   
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 4),
-                        child: GestureDetector(
-                          onTap: ferClick,
                           child: Text(
                             "Registra't",
                             style: TextStyle(
                               color: Color.fromARGB(255, 255, 240, 218)
                             ),
                           ),
-                        ),
                       ),
                   
                       const Expanded(
@@ -138,6 +135,7 @@ class PaginaRegistre extends StatelessWidget {
                       Text("Ja ets membre?", style: TextStyle(fontWeight: FontWeight.bold),),
                       SizedBox(width: 5,),
                       GestureDetector(
+                        onTap: ferClick,
                         child: Text(
                           "Fes login",
                           style: TextStyle(
