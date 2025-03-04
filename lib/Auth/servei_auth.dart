@@ -7,6 +7,11 @@ class ServeiAuth {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
 
+  //Usuari actual
+  User? getUsuariActual(){
+    return _auth.currentUser;
+  }
+
   //Fer logout
   Future <void> ferLogout() async {
     return await _auth.signOut();
@@ -17,7 +22,29 @@ class ServeiAuth {
 
     try {
       
-      UserCredential credencialUsuari =  await _auth.signInWithEmailAndPassword(email: email, password: password);
+      UserCredential credencialUsuari =  await _auth.signInWithEmailAndPassword(
+        email: email, 
+        password: password
+      );
+
+      // Comprovem si l'usuari ja esta donat d'alta a Firestore (a Firebaseauth, si hem arribat aui, ja sabem que su que hi es). Si no estigues donat 
+      //d'alta el donem d'alta (a Firestore). Fet per si de cas es dones d'alta un usuari directament des de la consola de firebase i no a traves de 
+      //la nostra App
+
+      final QuerySnapshot querySnapshot = await _firestore
+        .collection("Usuaris")
+        .where("email", isEqualTo: email)
+        .get()
+      ;
+
+      if (querySnapshot.docs.isEmpty) {
+        _firestore.collection("Usuaris").doc(credencialUsuari.user!.uid).set({
+          "uid" : credencialUsuari.user!.uid,
+          "email" : email,
+          "nom" : ""
+        });
+      }
+      
       return null;
 
     } on FirebaseAuthException catch (e) {
@@ -32,7 +59,10 @@ class ServeiAuth {
     print("Email: " + email);
     try {
 
-      UserCredential credencialUsuari = await _auth.createUserWithEmailAndPassword(email: email, password: password);
+      UserCredential credencialUsuari = await _auth.createUserWithEmailAndPassword(
+        email: email, 
+        password: password
+      );
 
       _firestore.collection("Usuaris").doc(credencialUsuari.user!.uid).set({
         "uid" : credencialUsuari.user!.uid,

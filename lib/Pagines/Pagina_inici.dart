@@ -1,6 +1,7 @@
 import 'package:ej_firebase/Auth/servei_auth.dart';
 import 'package:ej_firebase/Chat/Servei_chat.dart';
 import 'package:ej_firebase/Components/Item_usuari.dart';
+import 'package:ej_firebase/Pagines/Pagina_chat.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -17,7 +18,7 @@ class _PaginaIniciState extends State<PaginaInici> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 122, 88, 93),
-        title: Text("Pagina inici"),
+        title: Text(ServeiAuth().getUsuariActual()!.email.toString()),
         actions: [
           IconButton(onPressed: (){
               ServeiAuth().ferLogout();
@@ -50,6 +51,19 @@ class _PaginaIniciState extends State<PaginaInici> {
   }
 
   Widget _construeixItemUsuari(Map<String,dynamic> dadesUsuari){
-    return ItemUsuari(emailUsuari: dadesUsuari["email"]);
+
+    if (dadesUsuari["email"] == ServeiAuth().getUsuariActual()!.email) {
+      return Container();
+    }
+
+    return ItemUsuari(
+      emailUsuari: dadesUsuari["email"],
+      onTap: (){
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => PaginaChat(idReceptor: dadesUsuari["uid"],))
+        );
+      },
+    );
   }
 }
