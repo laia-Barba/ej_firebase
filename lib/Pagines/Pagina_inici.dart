@@ -41,9 +41,10 @@ class _PaginaIniciState extends State<PaginaInici> {
 
             //Es retornen dades
             return ListView(
-              children: snapshot.data!.map<Widget>(
-                (dadesUsuari) => _construeixItemUsuari(dadesUsuari)
-              ).toList(),
+              children: snapshot.data!
+                .map<Widget>(
+                  (dadesUsuari) => _construeixItemUsuari(dadesUsuari)
+                ).toList(),
             );
           }
         ),
