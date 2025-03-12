@@ -1,6 +1,5 @@
 import 'package:ej_firebase/Pagines/Pagina_login.dart';
 import 'package:ej_firebase/Pagines/Pagina_registre.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class LoginORegistre extends StatefulWidget {

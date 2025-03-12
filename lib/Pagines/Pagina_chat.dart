@@ -17,10 +17,18 @@ class _PaginaChatState extends State<PaginaChat> {
 final TextEditingController tecMissatge = TextEditingController();
 final ScrollController _scrollController = ScrollController();
 
+FocusNode teclatMobil = FocusNode();
+
 @override
   void initState() {
     // TODO: implement initState
     super.initState();
+
+    teclatMobil.addListener((){
+      Future.delayed(Duration(milliseconds: 500), (){
+        ferScrollCapAvall();
+      });
+    });
 
     Future.delayed(Duration(milliseconds: 500), (){
       ferScrollCapAvall();

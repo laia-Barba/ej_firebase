@@ -1,8 +1,6 @@
 import 'package:ej_firebase/Auth/login_o_registre.dart';
 import 'package:ej_firebase/Pagines/Pagina_inici.dart';
-import 'package:ej_firebase/Pagines/Pagina_login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PortalAuth extends StatelessWidget {

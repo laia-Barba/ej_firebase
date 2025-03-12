@@ -1,7 +1,4 @@
 import 'package:ej_firebase/Auth/portal_auth.dart';
-import 'package:ej_firebase/Pagines/Pagina_inici.dart';
-import 'package:ej_firebase/Pagines/Pagina_login.dart';
-import 'package:ej_firebase/Pagines/Pagina_registre.dart';
 import 'package:ej_firebase/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';

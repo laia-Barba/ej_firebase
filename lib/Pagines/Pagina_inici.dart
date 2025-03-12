@@ -2,7 +2,6 @@ import 'package:ej_firebase/Auth/servei_auth.dart';
 import 'package:ej_firebase/Chat/Servei_chat.dart';
 import 'package:ej_firebase/Components/Item_usuari.dart';
 import 'package:ej_firebase/Pagines/Pagina_chat.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PaginaInici extends StatefulWidget {

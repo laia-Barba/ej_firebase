@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:ej_firebase/Models/missatge.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_core/firebase_core.dart';
 
 class ServeiChat {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;

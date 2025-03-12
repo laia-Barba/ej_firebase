@@ -1,7 +1,6 @@
 import 'package:ej_firebase/Auth/servei_auth.dart';
 import 'package:ej_firebase/Components/Boto_auth.dart';
 import 'package:ej_firebase/Components/TextField_aut.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class PaginaLogin extends StatelessWidget {
