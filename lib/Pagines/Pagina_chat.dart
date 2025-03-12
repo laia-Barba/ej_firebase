@@ -15,6 +15,26 @@ class PaginaChat extends StatefulWidget {
 class _PaginaChatState extends State<PaginaChat> {
 
 final TextEditingController tecMissatge = TextEditingController();
+final ScrollController _scrollController = ScrollController();
+
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Future.delayed(Duration(milliseconds: 500), (){
+      ferScrollCapAvall();
+    });
+    
+  }
+
+void ferScrollCapAvall(){
+  _scrollController.animateTo(
+        _scrollController.position.maxScrollExtent + 100, 
+        duration: Duration(milliseconds: 500), 
+        curve: Curves.fastOutSlowIn
+      );
+}
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +73,9 @@ final TextEditingController tecMissatge = TextEditingController();
 
         //Retornar dades
         return ListView(
-          children: snapshot.data!.docs.map((document) => _contsruirItemMissatge(document)).toList(),
+          controller: _scrollController,
+          children: 
+            snapshot.data!.docs.map((document) => _contsruirItemMissatge(document)).toList(),
         );
       }
     )
@@ -65,7 +87,7 @@ final TextEditingController tecMissatge = TextEditingController();
   
   Map<String, dynamic> data = DocumentSnapshot.data() as Map<String, dynamic>;
 
-  return BombollaMissatge(missatge: data["missatge"]);
+  return BombollaMissatge(missatge: data["missatge"], idAutor: data["idAutor"],);
 
  }
 
@@ -105,6 +127,9 @@ void enviarMissatge(){
     );
 
     tecMissatge.clear();
+    Future.delayed(Duration(milliseconds: 250), (){
+      ferScrollCapAvall();
+    });
   }
 }
 
