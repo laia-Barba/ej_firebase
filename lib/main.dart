@@ -6,7 +6,18 @@ import 'package:flutter/material.dart';
 void main() async{
 
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
+  if(Firebase.apps.isEmpty){
+    try{
+      await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+    }catch(e){
+      print("Error iniciant Firebase");
+    }
+  }else{
+    print("Error, Firebase ja esta iniciatitzat.");
+  }
+
+
   runApp(const MainApp());
 }
 
@@ -51,6 +62,8 @@ class MainApp extends StatelessWidget {
    - flutter pub add firebase_core 
    - flutter pub add firebase_auth
    - flutter pub add cloud_firestore
+   - flutter pub add mongo_dart
+   - flutter pub add image_picker
 
     
 */
