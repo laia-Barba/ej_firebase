@@ -10,7 +10,7 @@ plugins {
 
 android {
     namespace = "com.example.ej_firebase"
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 35//flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
